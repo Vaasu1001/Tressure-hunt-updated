@@ -1,0 +1,246 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: "Gill Sans", sans-serif;
+	animation: page-load 350ms ease-in;
+	height: 100vh;
+  overflow: hidden;
+	width: 100%;
+  animation: page-load 350ms ease-in;
+	background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(map.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+}
+.progress {
+
+	background-color: rgba(241, 241, 241, 0.2);
+	border-style: solid;
+	border-color: #000;
+	border-radius: 20px;
+	position: absolute;
+	top: 1.5%;
+	left: 1%;
+	height: 20px;
+	width: 200px;
+}
+
+.progress-done {
+	background: #28df99;
+	box-shadow: 0 3px 3px -5px #000, 0 2px 5px #000;
+	border-radius: 20px;
+	color: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 0;
+	opacity: 0;
+	transition: 1s ease 0.3s;
+}
+/* .Clue{
+	background-color: rgba(241, 241, 241, 0.2);
+	border-radius: 20px;
+	border-style: solid;
+	border-color: #000;
+	position: absolute;
+	bottom: 1.5%;
+	right: 1%;
+	width: 27%;
+	text-align: center;
+} */
+.fa-info-circle{
+  position: absolute;
+	font-size: 25px;
+  top: 1.5%;
+  left: 14.5%;
+  z-index: 2;
+	opacity: 0.95;
+	color: #fff;
+}
+.fa-info-circle:hover{
+  transform: scale(1.15);
+  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+  border-radius: 30px;
+}
+.center {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.popup {
+  width:50%;
+  height:38%;
+  padding:30px 20px;
+  background:linear-gradient(90deg,transparent, rgba(255,255,255,0.9), transparent);
+  border-radius:15px;
+  z-index:3;
+  text-align:center;
+  opacity:0;
+  top:-200%;
+  transform:translate(-50%,-50%) scale(0.5);
+  transition: opacity 300ms ease-in-out,
+              top 1000ms ease-in-out,
+              transform 1000ms ease-in-out;
+}
+.popup.active {
+  opacity:0.7;
+  top:50%;
+  transform:translate(-50%,-50%) scale(1);
+  transition: transform 300ms cubic-bezier(0.18,0.89,0.43,1.19);
+}
+.popup .icon {
+  margin:5px 0px;
+	padding: 10px;
+  width:50px;
+  height:50px;
+	border:5px solid #000;
+	border-radius: 50%;
+  text-align:center;
+  display:inline-block;
+  line-height:60px;
+}
+.popup .icon i.fa-skull-crossbones {
+  font-size:50px;
+  color:#000;
+}
+.popup .title {
+  margin:5px 0px;
+  font-size:3.5rem;
+  font-weight:600;
+}
+.popup .description {
+  color:#222;
+  font-size:1.5rem;
+  padding:5px;
+}
+.popup .dismiss-btn {
+  margin-top:15px;
+}
+.popup .dismiss-btn button {
+  padding:10px 20px;
+  background:#111;
+  color:#f5f5f5;
+  border:2px solid #111;
+  font-size:16px;
+  font-weight:600;
+  outline:none;
+  border-radius:10px;
+  cursor:pointer;
+  transition: all 300ms ease-in-out;
+}
+.popup .dismiss-btn button:hover {
+  color:#111;
+  background:#f5f5f5;
+}
+.popup > div {
+  position:relative;
+  top:10px;
+  opacity:0;
+}
+.popup.active > div {
+  top:0px;
+  opacity:1;
+}
+.popup.active .icon {
+  transition: all 300ms ease-in-out 250ms;
+}
+.popup.active .title {
+  transition: all 300ms ease-in-out 300ms;
+}
+.popup.active .description {
+  transition: all 300ms ease-in-out 350ms;
+}
+.popup.active .dismiss-btn {
+  transition: all 300ms ease-in-out 400ms;
+}
+.OLD{
+	position: absolute;
+	top: 8%;
+	left: 22.5%;
+	width: 2%;
+	z-index: 2;
+}
+.MAIN{
+	position: absolute;
+	top: 74%;
+	left: 47%;
+	width: 2%;
+	z-index: 2;
+}
+.HELIPAD{
+	position: absolute;
+	top: 8.5%;
+	left: 74.5%;
+	width: 2%;
+	z-index: 2;
+}
+.CLOCK{
+	position: absolute;
+	top: 47.5%;
+	left: 49.7%;
+	width: 2%;
+	z-index: 2;
+}
+.CSE{
+	position: absolute;
+	top: 22%;
+	left: 49%;
+	width: 2%;
+	z-index: 2;
+}
+.CAFE{
+	position: absolute;
+	top: 65%;
+	left: 71.2%;
+	width: 2%;
+	z-index: 2;
+}
+h1{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	font-size: 4rem;
+	font-weight: 700;
+	pointer-events: none;
+	opacity: 0;
+	letter-spacing: 20px;
+	transition: 0.5s;
+	white-space: nowrap;
+	z-index: 2;
+}
+/* map area:before{
+  content: attr(data-text);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	font-size: 4rem;
+	font-weight: 700;
+	pointer-events: none;
+	opacity: 0;
+	letter-spacing: 20px;
+	transition: 0.5s;
+	white-space: nowrap;
+	z-index: 2;
+}
+
+
+map area:hover:before{
+	opacity: 1;
+	letter-spacing: 5px;
+} */
+
+@keyframes  page-load {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
